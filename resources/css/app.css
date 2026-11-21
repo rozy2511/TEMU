@@ -1,0 +1,414 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   TEMU DESIGN SYSTEM
+========================================= */
+
+@layer base {
+    :root {
+        --temu-primary: #172f4f;
+        --temu-primary-dark: #10243d;
+        --temu-primary-light: #eaf1f8;
+        --temu-background: #f5f7fb;
+        --temu-surface: #ffffff;
+        --temu-text: #1e293b;
+        --temu-muted: #64748b;
+        --temu-border: #e2e8f0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--temu-background);
+        color: var(--temu-text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+        font: inherit;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    button:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    a {
+        transition: color 0.2s ease, background-color 0.2s ease;
+    }
+
+    ::selection {
+        background: #dbeafe;
+        color: #172f4f;
+    }
+
+    :focus-visible {
+        outline: 3px solid rgba(59, 130, 246, 0.4);
+        outline-offset: 3px;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+}
+
+/* =========================================
+   UTILITIES
+========================================= */
+
+@layer utilities {
+    .temu-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    .temu-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .temu-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 999px;
+    }
+
+    .temu-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* =========================================
+   COMPONENTS
+========================================= */
+
+@layer components {
+
+    /* Container */
+
+    .temu-container {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Cards */
+
+    .temu-card {
+        @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .temu-card-hover {
+        @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .temu-card-hover:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+        transform: translateY(-2px);
+    }
+
+    .temu-card-header {
+        @apply border-b border-slate-100 px-6 py-5;
+    }
+
+    .temu-card-body {
+        @apply p-6;
+    }
+
+    /* Buttons */
+
+    .temu-button,
+    .temu-button-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2;
+        background-color: var(--temu-primary);
+    }
+
+    .temu-button:hover,
+    .temu-button-primary:hover {
+        background-color: var(--temu-primary-dark);
+    }
+
+    .temu-button-secondary {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition duration-200 hover:border-slate-300 hover:bg-slate-50;
+    }
+
+    .temu-button-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-transparent px-5 py-3 text-sm font-semibold text-slate-700 transition duration-200 hover:bg-slate-100;
+    }
+
+    .temu-button-danger {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-5 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-red-700;
+    }
+
+    /* Forms */
+
+    .temu-label {
+        @apply mb-2 block text-sm font-semibold text-slate-700;
+    }
+
+    .temu-input,
+    .temu-textarea,
+    .temu-select {
+        @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition duration-200 placeholder:text-slate-400;
+    }
+
+    .temu-input:hover,
+    .temu-textarea:hover,
+    .temu-select:hover {
+        border-color: #cbd5e1;
+    }
+
+    .temu-input:focus,
+    .temu-textarea:focus,
+    .temu-select:focus {
+        border-color: #64748b;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .temu-input:disabled,
+    .temu-textarea:disabled,
+    .temu-select:disabled {
+        @apply cursor-not-allowed bg-slate-100 text-slate-500;
+    }
+
+    .temu-textarea {
+        @apply min-h-32 resize-y;
+    }
+
+    .temu-select {
+        @apply cursor-pointer;
+    }
+
+    .temu-form-group {
+        @apply space-y-2;
+    }
+
+    .temu-form-hint {
+        @apply mt-1 text-xs text-slate-500;
+    }
+
+    .temu-form-error {
+        @apply mt-1 text-xs font-medium text-red-600;
+    }
+
+    /* Badges */
+
+    .temu-badge {
+        @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+    }
+
+    .temu-badge-primary {
+        @apply inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700;
+    }
+
+    .temu-badge-success {
+        @apply inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700;
+    }
+
+    .temu-badge-warning {
+        @apply inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700;
+    }
+
+    .temu-badge-danger {
+        @apply inline-flex items-center gap-1.5 rounded-full bg-red-50 px-3 py-1 text-xs font-semibold text-red-700;
+    }
+
+    .temu-badge-neutral {
+        @apply inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600;
+    }
+
+    /* Section headings */
+
+    .temu-section-title {
+        @apply text-xl font-bold tracking-tight text-slate-900 sm:text-2xl;
+    }
+
+    .temu-section-description {
+        @apply mt-2 text-sm leading-6 text-slate-500;
+    }
+
+    /* Statistics */
+
+    .temu-stat-card {
+        @apply rounded-2xl border border-slate-200 bg-white p-5 sm:p-6;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .temu-stat-card:hover {
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        transform: translateY(-2px);
+    }
+
+    .temu-stat-label {
+        @apply text-sm font-medium text-slate-500;
+    }
+
+    .temu-stat-value {
+        @apply mt-3 text-3xl font-bold tracking-tight text-slate-900;
+    }
+
+    /* Tables */
+
+    .temu-table-wrapper {
+        @apply w-full overflow-x-auto rounded-2xl border border-slate-200 bg-white;
+    }
+
+    .temu-table {
+        @apply w-full text-left text-sm;
+    }
+
+    .temu-table thead {
+        @apply bg-slate-50 text-xs uppercase tracking-wider text-slate-500;
+    }
+
+    .temu-table th {
+        @apply whitespace-nowrap px-5 py-4 font-semibold;
+    }
+
+    .temu-table td {
+        @apply border-t border-slate-100 px-5 py-4 text-slate-600;
+    }
+
+    .temu-table tbody tr {
+        @apply transition-colors duration-150;
+    }
+
+    .temu-table tbody tr:hover {
+        @apply bg-slate-50;
+    }
+
+    /* Navigation */
+
+    .temu-nav-link {
+        @apply inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-slate-600 transition duration-200 hover:bg-slate-100 hover:text-slate-900;
+    }
+
+    .temu-nav-link-active {
+        @apply bg-slate-100 font-semibold text-slate-900;
+    }
+
+    /* Dividers */
+
+    .temu-divider {
+        @apply border-t border-slate-100;
+    }
+
+    /* Empty state */
+
+    .temu-empty-state {
+        @apply flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center;
+    }
+
+    .temu-empty-title {
+        @apply mt-4 text-base font-semibold text-slate-800;
+    }
+
+    .temu-empty-description {
+        @apply mt-2 max-w-sm text-sm leading-6 text-slate-500;
+    }
+
+    /* Dropdown */
+
+    .temu-dropdown {
+        @apply overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg shadow-slate-900/5;
+    }
+
+    .temu-dropdown-item {
+        @apply flex items-center gap-3 px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-slate-900;
+    }
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes temu-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes temu-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.temu-animate-fade-up {
+    animation: temu-fade-up 0.4s ease both;
+}
+
+.temu-animate-fade-in {
+    animation: temu-fade-in 0.3s ease both;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 640px) {
+    .temu-card-body {
+        @apply p-4;
+    }
+
+    .temu-stat-value {
+        @apply text-2xl;
+    }
+
+    .temu-button,
+    .temu-button-primary,
+    .temu-button-secondary {
+        @apply px-4 py-2.5;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
