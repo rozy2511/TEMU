@@ -4,133 +4,179 @@
 @section('title', 'Beranda | TEMU')
 
 @section('content')
-<main class="temu-container space-y-10 py-8 sm:py-10">
+<main class="temu-container space-y-12 py-8 sm:py-10">
 
-    <section class="relative overflow-hidden rounded-3xl bg-[#172f4f] shadow-xl shadow-slate-900/10">
-        <div class="pointer-events-none absolute -right-24 -top-28 h-96 w-96 rounded-full border border-white/10"></div>
-        <div class="pointer-events-none absolute -right-10 -bottom-48 h-96 w-96 rounded-full border border-white/10"></div>
-        <div class="pointer-events-none absolute right-1/3 top-0 h-64 w-64 rounded-full bg-blue-400/10 blur-3xl"></div>
+    {{-- HERO --}}
+    <section class="relative isolate overflow-hidden rounded-[2rem] bg-[#172f4f] shadow-2xl shadow-[#172f4f]/10">
+        <div class="pointer-events-none absolute -right-32 -top-32 h-[30rem] w-[30rem] rounded-full border border-white/[0.08]"></div>
+        <div class="pointer-events-none absolute -right-16 -top-16 h-[22rem] w-[22rem] rounded-full border border-white/[0.08]"></div>
+        <div class="pointer-events-none absolute -bottom-40 left-1/3 h-80 w-80 rounded-full bg-[#d5a34a]/10 blur-3xl"></div>
+        <div class="pointer-events-none absolute right-1/4 top-0 h-64 w-64 rounded-full bg-blue-400/10 blur-3xl"></div>
 
-        <div class="relative grid items-center gap-10 px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-[1.3fr_0.7fr] lg:px-14 lg:py-16">
+        <div class="relative grid items-center gap-12 px-6 py-12 sm:px-10 sm:py-14 lg:grid-cols-[1.15fr_0.85fr] lg:px-14 lg:py-16">
             <div class="max-w-2xl">
-                <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200">
-                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                    Campus Lost & Found Platform
-                </span>
+                <div class="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.08] px-4 py-2">
+                    <span class="relative flex h-2 w-2">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50"></span>
+                        <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+                    </span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-100">
+                        Campus Lost & Found Platform
+                    </span>
+                </div>
 
-                <h1 class="mt-7 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-                    Barang Hilang?
-                    <span class="mt-1 block text-blue-200">Temukan Kembali Bersama TEMU.</span>
-                </h1>
-
-                <p class="mt-5 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
-                    Satu tempat untuk melaporkan barang hilang, menemukan barang yang dicari, dan membantu mengembalikannya kepada pemilik yang tepat.
+                <p class="mt-8 text-xs font-semibold uppercase tracking-[0.22em] text-[#e8c17b]">
+                    Setiap barang punya cerita
                 </p>
 
-                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <h1 class="mt-4 text-4xl font-extrabold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+                    Barang hilang?
+                    <span class="mt-2 block text-[#e8c17b]">
+                        Temukan kembali bersama TEMU.
+                    </span>
+                </h1>
+
+                <p class="mt-6 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
+                    Ruang bersama untuk melaporkan barang hilang, menemukan barang yang tertinggal, dan mempertemukan kembali barang dengan pemiliknya.
+                </p>
+
+                <div class="mt-9 flex flex-col gap-3 sm:flex-row">
                     <a href="{{ route('user.reports.create') }}"
-                       class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[#172f4f] shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-0.5 hover:bg-blue-50">
+                       class="group inline-flex items-center justify-center gap-3 rounded-xl bg-[#e8c17b] px-6 py-4 text-sm font-bold text-[#172f4f] shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1 hover:bg-[#f0d39e]">
                         Buat Laporan
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m7-7H5"/>
                         </svg>
                     </a>
 
                     <a href="#laporan"
-                       class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition duration-200 hover:bg-white/20">
+                       class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/[0.06] px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:bg-white/[0.13]">
                         Jelajahi Laporan
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 9l-7 7-7-7"/>
+                        </svg>
                     </a>
+                </div>
+
+                <div class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/10 pt-6">
+                    <div class="flex items-center gap-2 text-xs text-slate-300">
+                        <svg class="h-4 w-4 text-[#e8c17b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5-3.5A2.5 2.5 0 0117.5 4h-11A2.5 2.5 0 004 6.5v11A2.5 2.5 0 006.5 20h11a2.5 2.5 0 002.5-2.5v-11z"/>
+                        </svg>
+                        Pelaporan mudah
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-300">
+                        <svg class="h-4 w-4 text-[#e8c17b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s8-4 8-11V5l-8-3-8 3v5c0 7 8 11 8 11z"/>
+                        </svg>
+                        Privasi terjaga
+                    </div>
                 </div>
             </div>
 
+            {{-- HOW IT WORKS --}}
             <div class="relative hidden lg:block">
-                <div class="rounded-3xl border border-white/20 bg-white/[0.12] p-6 shadow-2xl backdrop-blur-sm">
-                    <div class="flex items-center justify-between border-b border-white/15 pb-5">
+                <div class="absolute -inset-4 rounded-[2rem] border border-white/[0.08]"></div>
+
+                <div class="relative rounded-3xl border border-white/15 bg-white/[0.09] p-7 shadow-2xl backdrop-blur-md">
+                    <div class="flex items-start justify-between gap-4 border-b border-white/15 pb-6">
                         <div>
-                            <p class="text-xs font-semibold uppercase tracking-wider text-blue-100">
-                                Cara kerja TEMU
+                            <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#e8c17b]">
+                                Proses sederhana
                             </p>
-                            <h2 class="mt-1 text-lg font-bold text-white">
-                                Temukan dan kembalikan
+                            <h2 class="mt-2 text-xl font-bold text-white">
+                                Bagaimana TEMU bekerja?
                             </h2>
                         </div>
 
-                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-white">
-                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#e8c17b]/15 text-[#e8c17b]">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 12l2 2 4-4m5-3.5A2.5 2.5 0 0117.5 4h-11A2.5 2.5 0 004 6.5v11A2.5 2.5 0 006.5 20h11a2.5 2.5 0 002.5-2.5v-11z"/>
                             </svg>
                         </div>
                     </div>
 
-                    <div class="space-y-5 pt-6">
-                        <div class="flex gap-4">
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-300/20 text-sm font-bold text-blue-100">
+                    <div class="space-y-6 pt-7">
+                        <div class="flex items-start gap-4">
+                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[#e8c17b]/25 bg-[#e8c17b]/10 text-sm font-extrabold text-[#e8c17b]">
                                 01
                             </div>
-                            <div>
-                                <h3 class="text-sm font-semibold text-white">Laporkan barang</h3>
-                                <p class="mt-1 text-xs leading-5 text-slate-200">
-                                    Buat laporan kehilangan atau barang yang ditemukan.
+                            <div class="pt-1">
+                                <h3 class="text-sm font-bold text-white">Laporkan barang</h3>
+                                <p class="mt-1.5 text-xs leading-5 text-slate-300">
+                                    Bagikan informasi barang yang hilang atau ditemukan.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="ml-5 h-5 border-l border-dashed border-white/30"></div>
+                        <div class="ml-5 h-5 border-l border-dashed border-white/25"></div>
 
-                        <div class="flex gap-4">
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-300/20 text-sm font-bold text-blue-100">
+                        <div class="flex items-start gap-4">
+                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[#e8c17b]/25 bg-[#e8c17b]/10 text-sm font-extrabold text-[#e8c17b]">
                                 02
                             </div>
-                            <div>
-                                <h3 class="text-sm font-semibold text-white">Temukan kecocokan</h3>
-                                <p class="mt-1 text-xs leading-5 text-slate-200">
-                                    Gunakan pencarian dan Smart Item Matching.
+                            <div class="pt-1">
+                                <h3 class="text-sm font-bold text-white">Temukan kecocokan</h3>
+                                <p class="mt-1.5 text-xs leading-5 text-slate-300">
+                                    Jelajahi laporan dan manfaatkan Smart Item Matching.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="ml-5 h-5 border-l border-dashed border-white/30"></div>
+                        <div class="ml-5 h-5 border-l border-dashed border-white/25"></div>
 
-                        <div class="flex gap-4">
-                            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-300/20 text-sm font-bold text-blue-100">
+                        <div class="flex items-start gap-4">
+                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-[#e8c17b]/25 bg-[#e8c17b]/10 text-sm font-extrabold text-[#e8c17b]">
                                 03
                             </div>
-                            <div>
-                                <h3 class="text-sm font-semibold text-white">Konfirmasi pengembalian</h3>
-                                <p class="mt-1 text-xs leading-5 text-slate-200">
-                                    Lakukan verifikasi dan konfirmasi serah terima.
+                            <div class="pt-1">
+                                <h3 class="text-sm font-bold text-white">Konfirmasi pengembalian</h3>
+                                <p class="mt-1.5 text-xs leading-5 text-slate-300">
+                                    Verifikasi klaim dan konfirmasi serah terima barang.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="absolute -bottom-5 -left-7 rounded-2xl border border-white/15 bg-[#243f5e] px-5 py-4 shadow-xl">
+                    <p class="text-[10px] font-semibold uppercase tracking-wider text-blue-200">
+                        Satu tujuan
+                    </p>
+                    <p class="mt-1 text-sm font-bold text-white">
+                        Barang kembali ke pemiliknya.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
+    {{-- SEARCH --}}
     <section>
-        <div class="mb-5">
-            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#172f4f]">
-                <span class="h-1 w-6 rounded-full bg-[#172f4f]"></span>
-                Pencarian
+        <div class="mb-6">
+            <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#b58a45]">
+                <span class="h-px w-7 bg-[#b58a45]"></span>
+                Pencarian laporan
             </div>
 
-            <h2 class="mt-2 text-2xl font-bold tracking-tight text-slate-900">
-                Temukan Barang
-            </h2>
-
-            <p class="mt-2 text-sm leading-6 text-slate-500">
-                Cari laporan berdasarkan nama barang, jenis laporan, atau kategori.
-            </p>
+            <div class="mt-3 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <h2 class="text-2xl font-extrabold tracking-tight text-[#172f4f] sm:text-3xl">
+                        Temukan barang
+                    </h2>
+                    <p class="mt-2 text-sm leading-6 text-slate-500">
+                        Gunakan pencarian untuk menemukan laporan yang sesuai.
+                    </p>
+                </div>
+            </div>
         </div>
 
         <form id="searchForm"
               action="{{ route('user.dashboard') }}"
               method="GET"
-              class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+              class="rounded-3xl border border-slate-200/80 bg-white p-5 shadow-sm sm:p-7">
 
             <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-
                 <div class="lg:col-span-2">
                     <label for="search" class="temu-label">Nama Barang atau Kata Kunci</label>
 
@@ -192,16 +238,16 @@
         </form>
     </section>
 
+    {{-- REPORT CATALOG --}}
     <section id="laporan" class="scroll-mt-24">
-
-        <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-                <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#172f4f]">
-                    <span class="h-1 w-6 rounded-full bg-[#172f4f]"></span>
-                    Informasi Komunitas
+                <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#b58a45]">
+                    <span class="h-px w-7 bg-[#b58a45]"></span>
+                    Informasi komunitas
                 </div>
 
-                <h2 id="catalogTitle" class="mt-2 text-2xl font-bold tracking-tight text-slate-900">
+                <h2 id="catalogTitle" class="mt-3 text-2xl font-extrabold tracking-tight text-[#172f4f] sm:text-3xl">
                     {{ request()->hasAny(['search', 'type', 'category']) ? 'Hasil Pencarian Barang' : 'Laporan Barang' }}
                 </h2>
 
@@ -210,38 +256,44 @@
                 </p>
 
                 @if (request('search'))
-                    <p id="searchKeyword" class="mt-2 text-sm font-medium text-[#172f4f]">
+                    <p id="searchKeyword" class="mt-3 inline-flex rounded-lg bg-[#f5f1e8] px-3 py-1.5 text-xs font-semibold text-[#8d6b32]">
                         Kata kunci: "{{ request('search') }}"
                     </p>
                 @else
-                    <p id="searchKeyword" class="mt-2 hidden text-sm font-medium text-[#172f4f]"></p>
+                    <p id="searchKeyword" class="mt-3 hidden rounded-lg bg-[#f5f1e8] px-3 py-1.5 text-xs font-semibold text-[#8d6b32]"></p>
                 @endif
             </div>
 
-            <div class="inline-flex w-fit items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-600 shadow-sm">
-                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-                <span>Jumlah hasil:</span>
-                <strong id="resultCount" class="font-bold text-slate-900">{{ $reports->total() }}</strong>
+            <div class="inline-flex w-fit items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+                <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#f5f1e8] text-[#a47b39]">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Jumlah hasil</p>
+                    <p id="resultCount" class="text-lg font-extrabold leading-tight text-[#172f4f]">{{ $reports->total() }}</p>
+                </div>
             </div>
         </div>
 
-        <div id="reportGrid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-
+        <div id="reportGrid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
             @forelse ($reports as $report)
-                <article class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5">
+                <article class="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#d8c7a5] hover:shadow-xl hover:shadow-[#172f4f]/[0.07]">
 
-                    <div class="relative h-56 overflow-hidden bg-slate-100">
+                    {{-- IMAGE --}}
+                    <div class="relative h-60 overflow-hidden bg-[#f2f4f7]">
                         @if ($report->photo)
                             <img
                                 src="{{ asset('storage/' . $report->photo) }}"
                                 alt="Foto {{ $report->item_name }}"
                                 loading="lazy"
-                                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                                class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                             >
                         @else
                             <div class="flex h-full flex-col items-center justify-center text-slate-400">
-                                <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm">
-                                    <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm">
+                                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4-4a2 2 0 012.828 0L16 17m-2-2l1.172-1.172a2 2 0 012.828 0L20 16M5 20h14a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v14a1 1 0 001 1z"/>
                                     </svg>
                                 </div>
@@ -249,33 +301,41 @@
                             </div>
                         @endif
 
-                        <div class="absolute left-4 top-4">
-                            <span class="inline-flex items-center rounded-lg px-3 py-1.5 text-xs font-semibold shadow-sm {{ $report->type === 'lost' ? 'bg-red-50 text-red-700' : 'bg-emerald-50 text-emerald-700' }}">
-                                <span class="mr-2 h-1.5 w-1.5 rounded-full {{ $report->type === 'lost' ? 'bg-red-500' : 'bg-emerald-500' }}"></span>
+                        <div class="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-4">
+                            <span class="inline-flex items-center gap-2 rounded-xl px-3 py-2 text-[11px] font-bold shadow-sm backdrop-blur-md {{ $report->type === 'lost' ? 'bg-red-50/95 text-red-700' : 'bg-emerald-50/95 text-emerald-700' }}">
+                                <span class="h-1.5 w-1.5 rounded-full {{ $report->type === 'lost' ? 'bg-red-500' : 'bg-emerald-500' }}"></span>
                                 {{ $report->type === 'lost' ? 'Barang Hilang' : 'Barang Ditemukan' }}
                             </span>
-                        </div>
 
-                        <div class="absolute bottom-4 right-4">
-                            <span class="rounded-lg bg-slate-900/75 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
+                            <span class="rounded-xl border border-white/30 bg-slate-900/55 px-3 py-2 text-[10px] font-semibold text-white backdrop-blur-md">
                                 {{ $report->category }}
                             </span>
                         </div>
+
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-950/35 to-transparent"></div>
+
+                        <div class="absolute bottom-4 left-4 flex items-center gap-2 text-[11px] font-medium text-white">
+                            <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3M4 11h16M5 5h14a1 1 0 011 1v13a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z"/>
+                            </svg>
+                            {{ $report->created_at->format('d M Y') }}
+                        </div>
                     </div>
 
+                    {{-- CONTENT --}}
                     <div class="flex flex-1 flex-col p-5 sm:p-6">
                         <div class="flex items-center justify-between gap-3">
-                            <span class="text-xs font-medium text-slate-400">
-                                Dilaporkan {{ $report->created_at->format('d M Y') }}
+                            <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
+                                Informasi barang
                             </span>
 
-                            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700">
+                            <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-700">
                                 <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                                 Aktif
                             </span>
                         </div>
 
-                        <h3 class="mt-3 text-lg font-bold leading-snug text-slate-900 transition group-hover:text-[#172f4f]">
+                        <h3 class="mt-3 text-xl font-extrabold leading-snug tracking-tight text-[#172f4f] transition group-hover:text-[#9a7438]">
                             {{ $report->item_name }}
                         </h3>
 
@@ -283,43 +343,59 @@
                             {{ \Illuminate\Support\Str::limit($report->description, 110) }}
                         </p>
 
-                        <div class="mt-5 space-y-3 border-t border-slate-100 pt-4">
-                            <div class="flex items-start gap-3 text-sm text-slate-600">
-                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                                <span class="leading-5">{{ $report->location }}</span>
+                        <div class="mt-5 space-y-3 border-t border-slate-100 pt-5">
+                            <div class="flex items-start gap-3">
+                                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#f5f1e8] text-[#a47b39]">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="min-w-0 pt-0.5">
+                                    <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Lokasi kejadian</p>
+                                    <p class="mt-0.5 break-words text-xs font-semibold leading-5 text-slate-700">
+                                        {{ $report->location }}
+                                    </p>
+                                </div>
                             </div>
 
-                            <div class="flex items-start gap-3 text-sm text-slate-600">
-                                <svg class="mt-0.5 h-4 w-4 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3M4 11h16M5 5h14a1 1 0 01-1 1v13a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z"/>
-                                </svg>
-                                <span class="leading-5">{{ $report->incident_date->format('d M Y') }}</span>
+                            <div class="flex items-start gap-3">
+                                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#f5f1e8] text-[#a47b39]">
+                                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3M4 11h16M5 5h14a1 1 0 011 1v13a1 1 0 01-1 1H5a1 1 0 01-1-1V6a1 1 0 011-1z"/>
+                                    </svg>
+                                </div>
+                                <div class="min-w-0 pt-0.5">
+                                    <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Tanggal kejadian</p>
+                                    <p class="mt-0.5 text-xs font-semibold text-slate-700">
+                                        {{ $report->incident_date->format('d M Y') }}
+                                    </p>
+                                </div>
                             </div>
 
-                            <div class="flex items-center gap-3 text-sm text-slate-600">
-                                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-[#172f4f]">
+                            <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+                                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e8dfce] bg-[#f5f1e8] text-xs font-extrabold text-[#8d6b32]">
                                     {{ strtoupper(substr($report->user->name, 0, 1)) }}
                                 </div>
                                 <div class="min-w-0">
-                                    <p class="text-[11px] text-slate-400">Dilaporkan oleh</p>
-                                    <p class="truncate font-medium text-slate-700">{{ $report->user->name }}</p>
+                                    <p class="text-[10px] font-medium text-slate-400">Dilaporkan oleh</p>
+                                    <p class="truncate text-xs font-bold text-[#263c54]">
+                                        {{ $report->user->name }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </article>
             @empty
-                <div class="col-span-full rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
-                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100">
-                        <svg class="h-8 w-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="col-span-full rounded-3xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#f5f1e8] text-[#a47b39]">
+                        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M11 19a8 8 0 110-16 8 8 0 010 16z"/>
                         </svg>
                     </div>
 
-                    <h3 class="mt-5 text-lg font-bold text-slate-900">
+                    <h3 class="mt-5 text-lg font-extrabold text-[#172f4f]">
                         {{ request()->hasAny(['search', 'type', 'category']) ? 'Barang Tidak Ditemukan' : 'Belum Ada Laporan' }}
                     </h3>
 
@@ -332,39 +408,46 @@
                     </p>
 
                     <a href="{{ route('user.dashboard') }}"
-                       class="mt-6 inline-flex items-center justify-center rounded-xl bg-[#172f4f] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#213e63]">
+                       class="mt-6 inline-flex items-center justify-center rounded-xl bg-[#172f4f] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#213e63]">
                         Tampilkan Semua Laporan
                     </a>
                 </div>
             @endforelse
-
         </div>
 
         @if ($reports->hasPages())
-            <div id="reportPagination" class="mt-8">
+            <div id="reportPagination" class="mt-9">
                 {{ $reports->links() }}
             </div>
         @else
             <div id="reportPagination"></div>
         @endif
-
     </section>
 
-    <section class="rounded-2xl border border-slate-200 bg-white px-6 py-6 sm:px-8">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-                <h2 class="text-base font-bold text-slate-900">
+    {{-- CALL TO ACTION --}}
+    <section class="relative overflow-hidden rounded-3xl border border-[#e8dfce] bg-[#faf8f3] px-6 py-8 sm:px-9 sm:py-9">
+        <div class="pointer-events-none absolute -right-12 -top-20 h-64 w-64 rounded-full border border-[#d5a34a]/20"></div>
+        <div class="pointer-events-none absolute -right-4 -top-12 h-48 w-48 rounded-full border border-[#d5a34a]/20"></div>
+
+        <div class="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div class="max-w-xl">
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#a47b39]">
+                    Berkontribusi bersama TEMU
+                </p>
+                <h2 class="mt-2 text-xl font-extrabold tracking-tight text-[#172f4f] sm:text-2xl">
                     Kehilangan atau menemukan barang?
                 </h2>
-                <p class="mt-1 text-sm leading-6 text-slate-500">
-                    Buat laporan agar pengguna lain dapat membantu menemukan kecocokannya.
+                <p class="mt-2 text-sm leading-6 text-slate-600">
+                    Buat laporan agar komunitas kampus dapat membantu menemukan kecocokannya.
                 </p>
             </div>
 
             <a href="{{ route('user.reports.create') }}"
-               class="inline-flex shrink-0 items-center justify-center rounded-xl bg-[#172f4f] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#213e63]">
+               class="group inline-flex shrink-0 items-center justify-center gap-3 rounded-xl bg-[#172f4f] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#172f4f]/10 transition duration-300 hover:-translate-y-1 hover:bg-[#213e63]">
                 Buat Laporan
-                <span class="ml-2">→</span>
+                <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7"/>
+                </svg>
             </a>
         </div>
     </section>
@@ -418,8 +501,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             currentCatalog.replaceWith(newCatalog);
 
-            const newUrl = url;
-            window.history.pushState({}, '', newUrl);
+            window.history.pushState({}, '', url);
 
             const keyword = document.getElementById('searchKeyword');
 
