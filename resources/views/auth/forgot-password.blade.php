@@ -12,7 +12,7 @@
         </h2>
 
         <p class="mt-2 text-sm leading-6 text-slate-500">
-            Jangan khawatir. Masukkan alamat email akun TEMU kamu untuk menerima tautan pengaturan ulang kata sandi.
+            Jangan khawatir. Masukkan alamat email akun TEMU kamu untuk menerima kode OTP untuk pengaturan ulang kata sandi.
         </p>
     </div>
 
@@ -42,7 +42,7 @@
         <button
             type="submit"
             class="flex w-full items-center justify-center rounded-xl bg-[#172f4f] px-5 py-3.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-[#213e63] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2">
-            Kirim Tautan Reset
+            Kirim Kode OTP
         </button>
     </form>
 

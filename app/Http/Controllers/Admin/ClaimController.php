@@ -55,4 +55,20 @@ class ClaimController extends Controller
 
         return view('admin.claims.show', compact('claim'));
     }
+
+    public function destroy(Claim $claim)
+    {
+        if ($claim->status === 'approved') {
+            return back()->with(
+                'error',
+                'Klaim yang sudah disetujui tidak dapat dihapus karena berkaitan dengan proses serah terima.'
+            );
+        }
+
+        $claim->delete();
+
+        return redirect()
+            ->route('admin.claims.index')
+            ->with('success', 'Pengajuan klaim berhasil dihapus.');
+    }
 }

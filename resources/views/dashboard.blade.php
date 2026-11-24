@@ -1,318 +1,295 @@
 
 <x-app-layout>
-
-    <div class="min-h-screen overflow-hidden bg-[#f5f3ed]">
+    <div class="min-h-screen overflow-hidden bg-[#f6f7fb] text-[#142b49]">
 
         {{-- HERO --}}
-        <section class="relative overflow-hidden bg-[#142b47] text-white">
-
-            <div class="absolute inset-0 pointer-events-none">
-                <div class="absolute -right-32 -top-48 h-[600px] w-[600px] rounded-full border border-white/[0.07]"></div>
-                <div class="absolute -right-16 -top-32 h-[460px] w-[460px] rounded-full border border-white/[0.07]"></div>
-                <div class="absolute right-20 top-20 h-72 w-72 rounded-full border border-white/[0.06]"></div>
-                <div class="absolute bottom-0 left-0 h-1 w-1/3 bg-[#d5a34a]"></div>
+        <section class="relative isolate overflow-hidden bg-[#102640] text-white">
+            <div class="pointer-events-none absolute inset-0 overflow-hidden">
+                <div class="absolute -right-40 -top-48 h-[650px] w-[650px] rounded-full bg-[#8e85ff]/20 blur-[100px]"></div>
+                <div class="absolute -bottom-48 left-1/4 h-[500px] w-[500px] rounded-full bg-[#62e7d0]/10 blur-[100px]"></div>
                 <div class="absolute inset-0 opacity-[0.035]"
-                     style="background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px); background-size: 55px 55px;">
+                     style="background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px); background-size: 48px 48px;">
                 </div>
             </div>
 
             <div class="relative mx-auto max-w-7xl px-5 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10 lg:pb-24">
+                <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
 
-                <div class="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
-
+                    {{-- HERO CONTENT --}}
                     <div class="relative z-10">
-
-                        <div class="mb-8 flex items-center gap-3">
-                            <span class="h-[2px] w-9 bg-[#d5a34a]"></span>
-                            <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#e8c17e]">
-                                Campus Lost & Found
+                        <div class="mb-8 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 backdrop-blur-xl">
+                            <span class="relative flex h-2.5 w-2.5">
+                                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#62e7d0] opacity-50"></span>
+                                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#62e7d0]"></span>
+                            </span>
+                            <span class="text-[10px] font-bold uppercase tracking-[0.24em] text-white/75">
+                                Campus Lost & Found Platform
                             </span>
                         </div>
 
-                        <h1 class="font-['Manrope'] text-[43px] font-extrabold leading-[1.08] tracking-[-0.06em] sm:text-6xl lg:text-[76px]">
+                        <p class="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#8eeede]">
+                            Selamat datang di TEMU
+                        </p>
+
+                        <h1 class="font-['Manrope'] text-4xl font-extrabold leading-[1.12] tracking-[-0.055em] sm:text-5xl lg:text-[64px]">
                             Setiap barang
                             <br>
                             punya
-                            <span class="text-[#e0b76e]">cerita.</span>
+                            <span class="bg-gradient-to-r from-[#62e7d0] via-[#8bcfff] to-[#b8aaff] bg-clip-text text-transparent">
+                                cerita.
+                            </span>
                         </h1>
 
-                        <div class="mt-8 flex items-start gap-4">
-                            <div class="mt-1 h-12 w-[3px] shrink-0 bg-[#d5a34a]"></div>
-                            <div>
-                                <p class="text-sm font-semibold text-white sm:text-base">
-                                    Selamat datang, {{ Auth::user()->name }}.
-                                </p>
-                                <p class="mt-2 max-w-lg text-sm leading-7 text-slate-300">
-                                    Temukan kembali yang hilang, bantu orang lain menemukan miliknya, dan jadilah bagian dari komunitas kampus yang peduli.
-                                </p>
-                            </div>
-                        </div>
+                        <p class="mt-7 text-sm font-semibold text-white sm:text-base">
+                            Selamat datang, {{ Auth::user()->name }}.
+                        </p>
+
+                        <p class="mt-3 max-w-xl text-sm leading-8 text-slate-300 sm:text-base">
+                            Temukan kembali barang yang hilang, bantu orang lain menemukan miliknya, dan jadilah bagian dari komunitas kampus yang saling peduli melalui TEMU.
+                        </p>
 
                         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-
                             <a href="{{ route('user.reports.create') }}"
-                               class="group inline-flex min-h-[54px] items-center justify-center gap-3 bg-[#d5a34a] px-7 text-sm font-extrabold text-[#142b47] transition duration-200 hover:bg-[#edc77f]">
-
+                               class="group inline-flex min-h-[54px] items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#62e7d0] to-[#8bcfff] px-7 text-sm font-extrabold text-[#102640] shadow-lg shadow-[#62e7d0]/15 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#62e7d0]/20">
                                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.8"
-                                          d="M12 5v14m-7-7h14"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 5v14m7-7H5"/>
                                 </svg>
-
                                 Laporkan Barang
-
                                 <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M5 12h14m-6-6 6 6-6 6"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6 6 6-6 6"/>
                                 </svg>
                             </a>
 
                             <a href="{{ route('user.reports.index') }}"
-                               class="inline-flex min-h-[54px] items-center justify-center border border-white/30 px-7 text-sm font-bold text-white transition duration-200 hover:border-white hover:bg-white/10">
-                                Jelajahi Laporan Saya
+                               class="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/[0.06] px-7 text-sm font-bold text-white backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/40 hover:bg-white/[0.12]">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+                                </svg>
+                                Laporan Saya
                             </a>
-
                         </div>
 
-                        <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/15 pt-6">
-
+                        <div class="mt-11 grid max-w-xl grid-cols-2 gap-4 border-t border-white/10 pt-6">
                             <div class="flex items-center gap-3">
-                                <div class="flex h-9 w-9 items-center justify-center border border-white/20 text-[#e0b76e]">
+                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#62e7d0]/20 bg-[#62e7d0]/10 text-[#8eeede]">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                                              d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                                              d="M9 12l2 2 4-4"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 12l2 2 4-4"/>
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="text-xs font-bold">Aman dan terarah</p>
-                                    <p class="mt-1 text-[10px] text-slate-400">Alur klaim terstruktur</p>
+                                    <p class="text-xs font-bold text-white">Proses terarah</p>
+                                    <p class="mt-1 text-[10px] text-slate-400">Verifikasi lebih terstruktur</p>
                                 </div>
                             </div>
 
                             <div class="flex items-center gap-3">
-                                <div class="flex h-9 w-9 items-center justify-center border border-white/20 text-[#e0b76e]">
+                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#b8aaff]/20 bg-[#8e85ff]/10 text-[#c2baff]">
                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-                                              d="M17 20h5v-2a4 4 0 00-5-3.87M9 20H2v-2a4 4 0 015-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75M9 14a4 4 0 014 4v2H5v-2a4 4 0 014-4z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M17 20h5v-2a4 4 0 00-5-3.87M9 20H2v-2a4 4 0 015-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75"/>
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="text-xs font-bold">Saling membantu</p>
+                                    <p class="text-xs font-bold text-white">Saling membantu</p>
                                     <p class="mt-1 text-[10px] text-slate-400">Berawal dari komunitas</p>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
 
-
                     {{-- HERO VISUAL --}}
-                    <div class="relative mx-auto w-full max-w-[470px] lg:ml-auto">
+                    <div class="relative mx-auto w-full max-w-[460px] lg:ml-auto">
+                        <div class="relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#25496b] via-[#1b3858] to-[#393c70] p-6 shadow-2xl shadow-black/20 sm:p-8">
 
-                        <div class="relative aspect-[4/5] overflow-hidden border border-white/15 bg-[#1d3d60]">
+                            <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#62e7d0]/15 blur-3xl"></div>
+                            <div class="pointer-events-none absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-[#8e85ff]/20 blur-3xl"></div>
 
-                            <div class="absolute inset-0 opacity-20"
-                                 style="background-image: radial-gradient(#ffffff 0.7px, transparent 0.7px); background-size: 15px 15px;">
-                            </div>
-
-                            <div class="absolute right-0 top-0 h-28 w-28 bg-[#d5a34a]"></div>
-                            <div class="absolute right-0 top-0 h-20 w-20 bg-[#1d3d60]"></div>
-
-                            <div class="absolute bottom-0 left-0 h-32 w-32 bg-[#d5a34a]"></div>
-                            <div class="absolute bottom-0 left-0 h-24 w-24 bg-[#1d3d60]"></div>
-
-                            <div class="absolute inset-8 border border-white/20"></div>
-
-                            <div class="absolute inset-0 flex items-center justify-center">
-
-                                <div class="relative flex h-64 w-64 items-center justify-center sm:h-72 sm:w-72">
-
-                                    <div class="absolute inset-0 rounded-full border border-white/20"></div>
-                                    <div class="absolute inset-8 rounded-full border border-white/10"></div>
-                                    <div class="absolute inset-16 rounded-full border border-white/10"></div>
-
-                                    <div class="relative flex h-40 w-40 items-center justify-center rounded-full border border-[#e4bc73]/50 bg-[#142b47] shadow-2xl sm:h-48 sm:w-48">
-
-                                        <svg class="h-24 w-24 text-[#e4bc73] sm:h-28 sm:w-28"
-                                             viewBox="0 0 120 120" fill="none">
-                                            <path d="M60 8L100 24V56C100 83 83 103 60 113C37 103 20 83 20 56V24L60 8Z"
-                                                  stroke="currentColor" stroke-width="2"/>
-                                            <path d="M60 27L84 37V57C84 76 74 89 60 97C46 89 36 76 36 57V37L60 27Z"
-                                                  stroke="currentColor" stroke-width="1.5" opacity=".5"/>
-                                            <path d="M45 59L55 69L76 48"
-                                                  stroke="currentColor" stroke-width="3"
-                                                  stroke-linecap="square" stroke-linejoin="miter"/>
-                                        </svg>
-
-                                    </div>
-
-                                    <div class="absolute -right-1 top-10 flex h-12 w-12 items-center justify-center bg-[#d5a34a] text-[#142b47]">
-                                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                                  d="M20 11.5c0 5-8 10-8 10s-8-5-8-10a8 8 0 1116 0z"/>
-                                            <circle cx="12" cy="11.5" r="2.5" stroke-width="1.8"/>
-                                        </svg>
-                                    </div>
-
-                                    <div class="absolute -left-2 bottom-10 flex h-12 w-12 items-center justify-center border border-white/30 bg-[#1d3d60] text-white">
-                                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                                  d="M4 7h16M4 12h16M4 17h10"/>
-                                        </svg>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="absolute bottom-7 left-8 right-8 flex items-end justify-between border-t border-white/20 pt-5">
+                            <div class="relative flex items-center justify-between">
                                 <div>
-                                    <p class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#e4bc73]">The purpose</p>
-                                    <p class="mt-2 font-['Manrope'] text-xl font-extrabold tracking-tight">Reconnect.</p>
+                                    <p class="text-[9px] font-bold uppercase tracking-[0.25em] text-[#8eeede]">TEMU / 001</p>
+                                    <p class="mt-2 text-sm font-bold text-white">Reconnect what matters.</p>
                                 </div>
-                                <p class="text-[10px] font-bold tracking-[0.25em] text-white/50">TEMU / 001</p>
+                                <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-[#8eeede]">
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/>
+                                    </svg>
+                                </div>
                             </div>
 
+                            <div class="relative my-10 flex items-center justify-center">
+                                <div class="absolute h-64 w-64 rounded-full border border-white/10"></div>
+                                <div class="absolute h-52 w-52 rounded-full border border-white/10"></div>
+                                <div class="absolute h-40 w-40 rounded-full border border-[#62e7d0]/20"></div>
+                                <div class="absolute h-36 w-36 rounded-full bg-gradient-to-br from-[#62e7d0]/20 to-[#8e85ff]/30 blur-2xl"></div>
+
+                                <div class="relative flex h-36 w-36 items-center justify-center rounded-[2rem] border border-white/20 bg-white/[0.09] shadow-2xl backdrop-blur-xl sm:h-40 sm:w-40">
+                                    <svg class="h-20 w-20 text-[#8eeede] sm:h-24 sm:w-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z"/>
+                                        <circle cx="12" cy="10" r="2.8" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="relative grid grid-cols-2 gap-3">
+                                <div class="rounded-2xl border border-white/10 bg-white/[0.07] p-4 backdrop-blur-xl">
+                                    <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#62e7d0]/15 text-[#8eeede]">
+                                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 5v14m7-7H5"/>
+                                        </svg>
+                                    </div>
+                                    <p class="mt-3 text-xs font-bold text-white">Laporkan</p>
+                                    <p class="mt-1 text-[10px] leading-5 text-slate-400">Bagikan informasi barang</p>
+                                </div>
+
+                                <div class="rounded-2xl border border-white/10 bg-white/[0.07] p-4 backdrop-blur-xl">
+                                    <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-[#b8aaff]/15 text-[#c2baff]">
+                                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20 20l-4-4m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                        </svg>
+                                    </div>
+                                    <p class="mt-3 text-xs font-bold text-white">Temukan</p>
+                                    <p class="mt-1 text-[10px] leading-5 text-slate-400">Periksa kemungkinan cocok</p>
+                                </div>
+                            </div>
+
+                            <div class="relative mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+                                <p class="text-[10px] font-medium text-slate-400">One community. Many connections.</p>
+                                <span class="h-2 w-2 rounded-full bg-[#62e7d0] shadow-[0_0_12px_rgba(98,231,208,.8)]"></span>
+                            </div>
                         </div>
 
-                        <div class="absolute -bottom-5 -right-4 hidden bg-[#f5f3ed] px-6 py-4 shadow-xl sm:block">
-                            <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#9a762f]">One community</p>
-                            <p class="mt-1 font-['Manrope'] text-lg font-extrabold text-[#142b47]">Many connections.</p>
-                        </div>
-
+                        <div class="pointer-events-none absolute -bottom-4 -right-3 -z-0 h-28 w-28 rounded-full bg-[#8e85ff]/20 blur-3xl"></div>
                     </div>
 
                 </div>
             </div>
+
+            <div class="relative h-1 bg-gradient-to-r from-[#62e7d0] via-[#8bcfff] to-[#8e85ff]"></div>
         </section>
 
 
         {{-- QUICK NAVIGATION --}}
         <section class="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
-
-            <div class="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-
+            <div class="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
                 <div>
                     <div class="flex items-center gap-3">
-                        <span class="h-[2px] w-8 bg-[#d5a34a]"></span>
-                        <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#9a762f]">
+                        <span class="h-[2px] w-8 bg-[#62bfae]"></span>
+                        <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#438f86]">
                             Your Space
                         </p>
                     </div>
 
-                    <h2 class="mt-4 font-['Manrope'] text-3xl font-extrabold tracking-[-0.045em] text-[#142b47] sm:text-4xl">
+                    <h2 class="mt-4 font-['Manrope'] text-3xl font-extrabold tracking-[-0.045em] text-[#142b49] sm:text-4xl">
                         Apa yang ingin kamu lakukan?
                     </h2>
                 </div>
 
-                <p class="max-w-md text-sm leading-7 text-[#748091]">
-                    Semua kebutuhan pencarian, pelaporan, dan pengelolaan klaim barang tersedia dalam satu tempat.
+                <p class="max-w-md text-sm leading-7 text-slate-500">
+                    Semua kebutuhan pelaporan, pencarian, dan pengelolaan klaim barang tersedia dalam satu tempat.
                 </p>
-
             </div>
 
-
-            <div class="grid gap-5 md:grid-cols-3">
+            <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
 
                 {{-- REPORT --}}
                 <a href="{{ route('user.reports.create') }}"
-                   class="group relative min-h-[290px] overflow-hidden bg-[#142b47] p-7 text-white transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#142b47]/15">
-
-                    <div class="absolute -right-12 -top-12 h-44 w-44 rounded-full border border-white/10 transition-transform duration-500 group-hover:scale-125"></div>
-                    <div class="absolute -right-5 -top-5 h-28 w-28 rounded-full border border-white/10"></div>
+                   class="group relative overflow-hidden rounded-[1.7rem] bg-gradient-to-br from-[#142b49] to-[#254d70] p-7 text-white shadow-lg shadow-[#142b49]/10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#142b49]/15">
+                    <div class="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full border border-white/10 transition-transform duration-500 group-hover:scale-125"></div>
+                    <div class="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full bg-[#62e7d0]/10 blur-2xl"></div>
 
                     <div class="relative flex items-start justify-between">
-                        <div class="flex h-14 w-14 items-center justify-center border border-[#e4bc73]/50 bg-[#e4bc73]/10 text-[#e4bc73]">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#62e7d0]/20 bg-[#62e7d0]/10 text-[#8eeede]">
                             <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.7"
-                                      d="M12 5v14m-7-7h14"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 5v14m7-7H5"/>
                             </svg>
                         </div>
                         <span class="font-['Manrope'] text-xs font-bold tracking-[0.2em] text-white/40">01</span>
                     </div>
 
-                    <div class="relative mt-16">
-                        <h3 class="font-['Manrope'] text-2xl font-extrabold tracking-tight">Buat Laporan</h3>
-                        <p class="mt-3 max-w-[250px] text-sm leading-6 text-slate-300">
+                    <div class="relative mt-12">
+                        <span class="inline-flex rounded-full border border-[#62e7d0]/20 bg-[#62e7d0]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#8eeede]">
+                            Kontribusi
+                        </span>
+                        <h3 class="mt-4 font-['Manrope'] text-2xl font-extrabold tracking-tight">Buat Laporan</h3>
+                        <p class="mt-3 max-w-xs text-sm leading-7 text-slate-300">
                             Bagikan informasi barang hilang atau barang yang berhasil kamu temukan.
                         </p>
-
-                        <div class="mt-6 flex items-center gap-3 text-xs font-extrabold text-[#e4bc73]">
+                        <div class="mt-7 flex items-center gap-3 text-xs font-extrabold tracking-wider text-[#8eeede]">
                             BUAT LAPORAN
-                            <svg class="h-4 w-4 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6 6 6-6 6"/>
                             </svg>
                         </div>
                     </div>
-
+                    <div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#62e7d0] to-[#8bcfff] transition-all duration-500 group-hover:w-full"></div>
                 </a>
 
 
                 {{-- MY REPORTS --}}
                 <a href="{{ route('user.reports.index') }}"
-                   class="group relative min-h-[290px] overflow-hidden border border-[#142b47]/10 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-[#315f91]/40 hover:shadow-xl hover:shadow-[#142b47]/5">
-
-                    <div class="absolute -right-12 -top-12 h-44 w-44 rounded-full border border-[#142b47]/[0.07] transition-transform duration-500 group-hover:scale-125"></div>
+                   class="group relative overflow-hidden rounded-[1.7rem] border border-[#dce4ed] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-[#8bcfff] hover:shadow-xl hover:shadow-[#315f91]/10">
+                    <div class="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full border border-[#142b49]/[0.06] transition-transform duration-500 group-hover:scale-125"></div>
+                    <div class="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full bg-[#8bcfff]/15 blur-2xl"></div>
 
                     <div class="relative flex items-start justify-between">
-                        <div class="flex h-14 w-14 items-center justify-center border border-[#315f91]/15 bg-[#edf2f7] text-[#315f91]">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#8bcfff]/30 bg-gradient-to-br from-[#e4f6ff] to-[#e7e4ff] text-[#4779aa]">
                             <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.7"
-                                      d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
                             </svg>
                         </div>
-                        <span class="font-['Manrope'] text-xs font-bold tracking-[0.2em] text-[#aeb7c2]">02</span>
+                        <span class="font-['Manrope'] text-xs font-bold tracking-[0.2em] text-slate-300">02</span>
                     </div>
 
-                    <div class="relative mt-16">
-                        <h3 class="font-['Manrope'] text-2xl font-extrabold tracking-tight text-[#142b47]">Laporan Saya</h3>
-                        <p class="mt-3 max-w-[250px] text-sm leading-6 text-[#788493]">
+                    <div class="relative mt-12">
+                        <span class="inline-flex rounded-full bg-[#edf6ff] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#4779aa]">
+                            Pemantauan
+                        </span>
+                        <h3 class="mt-4 font-['Manrope'] text-2xl font-extrabold tracking-tight text-[#142b49]">Laporan Saya</h3>
+                        <p class="mt-3 max-w-xs text-sm leading-7 text-slate-500">
                             Kelola laporan yang sudah kamu buat dan pantau perkembangannya.
                         </p>
-
-                        <div class="mt-6 flex items-center gap-3 text-xs font-extrabold text-[#315f91]">
+                        <div class="mt-7 flex items-center gap-3 text-xs font-extrabold tracking-wider text-[#4779aa]">
                             LIHAT LAPORAN
-                            <svg class="h-4 w-4 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6 6 6-6 6"/>
                             </svg>
                         </div>
                     </div>
-
+                    <div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#8bcfff] to-[#8e85ff] transition-all duration-500 group-hover:w-full"></div>
                 </a>
 
 
                 {{-- CLAIMS --}}
                 <a href="{{ route('user.claims.my') }}"
-                   class="group relative min-h-[290px] overflow-hidden border border-[#142b47]/10 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-[#315f91]/40 hover:shadow-xl hover:shadow-[#142b47]/5">
-
-                    <div class="absolute -right-12 -top-12 h-44 w-44 rounded-full border border-[#142b47]/[0.07] transition-transform duration-500 group-hover:scale-125"></div>
+                   class="group relative overflow-hidden rounded-[1.7rem] border border-[#dce4ed] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-[#c5baff] hover:shadow-xl hover:shadow-[#6558b0]/10">
+                    <div class="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full border border-[#142b49]/[0.06] transition-transform duration-500 group-hover:scale-125"></div>
+                    <div class="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full bg-[#8e85ff]/15 blur-2xl"></div>
 
                     <div class="relative flex items-start justify-between">
-                        <div class="flex h-14 w-14 items-center justify-center border border-[#315f91]/15 bg-[#edf2f7] text-[#315f91]">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#cfc7ff]/40 bg-gradient-to-br from-[#eeeaff] to-[#e4efff] text-[#6558b0]">
                             <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="square" stroke-linejoin="round" stroke-width="1.7"
-                                      d="M9 12l2 2 4-4m5 2a8 8 0 11-16 0 8 8 0 0116 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5 2a8 8 0 11-16 0 8 8 0 0116 0z"/>
                             </svg>
                         </div>
-                        <span class="font-['Manrope'] text-xs font-bold tracking-[0.2em] text-[#aeb7c2]">03</span>
+                        <span class="font-['Manrope'] text-xs font-bold tracking-[0.2em] text-slate-300">03</span>
                     </div>
 
-                    <div class="relative mt-16">
-                        <h3 class="font-['Manrope'] text-2xl font-extrabold tracking-tight text-[#142b47]">Klaim Saya</h3>
-                        <p class="mt-3 max-w-[250px] text-sm leading-6 text-[#788493]">
+                    <div class="relative mt-12">
+                        <span class="inline-flex rounded-full bg-[#f0edff] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#6558b0]">
+                            Verifikasi
+                        </span>
+                        <h3 class="mt-4 font-['Manrope'] text-2xl font-extrabold tracking-tight text-[#142b49]">Klaim Saya</h3>
+                        <p class="mt-3 max-w-xs text-sm leading-7 text-slate-500">
                             Periksa pengajuan klaim dan ikuti proses konfirmasi pengembalian barang.
                         </p>
-
-                        <div class="mt-6 flex items-center gap-3 text-xs font-extrabold text-[#315f91]">
+                        <div class="mt-7 flex items-center gap-3 text-xs font-extrabold tracking-wider text-[#6558b0]">
                             LIHAT KLAIM
-                            <svg class="h-4 w-4 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6 6 6-6 6"/>
                             </svg>
                         </div>
                     </div>
-
+                    <div class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#8e85ff] to-[#c5baff] transition-all duration-500 group-hover:w-full"></div>
                 </a>
 
             </div>
@@ -320,80 +297,102 @@
 
 
         {{-- PROCESS SECTION --}}
-        <section class="relative overflow-hidden bg-[#e9e5da]">
-
-            <div class="absolute bottom-0 right-0 h-64 w-64 rounded-full border border-[#142b47]/[0.06]"></div>
-            <div class="absolute bottom-0 right-0 h-44 w-44 rounded-full border border-[#142b47]/[0.06]"></div>
+        <section class="relative overflow-hidden bg-gradient-to-br from-[#edf1f6] via-[#f2f0fa] to-[#eaf6f5]">
+            <div class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#8e85ff]/10 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-[#62e7d0]/10 blur-3xl"></div>
 
             <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
-
                 <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
 
+                    {{-- PROCESS INTRO --}}
                     <div>
                         <div class="flex items-center gap-3">
-                            <span class="h-[2px] w-8 bg-[#d5a34a]"></span>
-                            <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#9a762f]">
+                            <span class="h-[2px] w-8 bg-[#62bfae]"></span>
+                            <p class="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#438f86]">
                                 How TEMU Works
                             </p>
                         </div>
 
-                        <h2 class="mt-5 font-['Manrope'] text-3xl font-extrabold leading-tight tracking-[-0.05em] text-[#142b47] sm:text-5xl">
+                        <h2 class="mt-5 font-['Manrope'] text-3xl font-extrabold leading-tight tracking-[-0.05em] text-[#142b49] sm:text-5xl">
                             Dari kehilangan menuju penemuan.
                         </h2>
 
-                        <p class="mt-6 max-w-sm text-sm leading-7 text-[#6d7988]">
-                            TEMU dirancang untuk membantu proses pencarian dan pengembalian barang melalui langkah yang mudah dipahami.
+                        <p class="mt-6 max-w-sm text-sm leading-8 text-slate-500">
+                            TEMU membantu proses pencarian dan pengembalian barang melalui tahapan yang mudah dipahami dan terstruktur.
                         </p>
 
-                        <div class="mt-8 inline-flex items-center gap-3 border-b border-[#142b47]/30 pb-2 text-xs font-bold uppercase tracking-[0.15em] text-[#142b47]">
+                        <div class="mt-8 inline-flex items-center gap-3 rounded-full border border-[#142b49]/10 bg-white/70 px-4 py-3 text-[10px] font-extrabold uppercase tracking-[0.15em] text-[#315f91] shadow-sm">
+                            <span class="h-2 w-2 rounded-full bg-[#62bfae]"></span>
                             Find. Connect. Return.
                         </div>
                     </div>
 
 
-                    <div class="space-y-0">
+                    {{-- PROCESS STEPS --}}
+                    <div class="overflow-hidden rounded-[1.8rem] border border-white/80 bg-white/75 p-5 shadow-xl shadow-[#142b49]/[0.04] backdrop-blur-xl sm:p-8">
 
-                        <div class="group grid grid-cols-[65px_1fr] gap-5 border-b border-[#142b47]/15 py-7 first:pt-0 sm:grid-cols-[90px_1fr]">
-
-                            <div class="font-['Manrope'] text-4xl font-extrabold text-[#c39a51] transition-colors group-hover:text-[#142b47] sm:text-5xl">01</div>
-
+                        <div class="mb-3 flex items-center justify-between border-b border-[#142b49]/10 pb-5">
                             <div>
-                                <h3 class="font-['Manrope'] text-lg font-extrabold text-[#142b47] sm:text-xl">Laporkan barang</h3>
-                                <p class="mt-3 max-w-lg text-sm leading-7 text-[#6d7988]">
-                                    Buat laporan kehilangan atau penemuan dengan foto, deskripsi, dan informasi lokasi yang relevan.
-                                </p>
+                                <p class="text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#438f86]">Proses sederhana</p>
+                                <h3 class="mt-2 font-['Manrope'] text-xl font-extrabold text-[#142b49] sm:text-2xl">
+                                    Bagaimana TEMU bekerja?
+                                </h3>
+                            </div>
+                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#edf6ff] text-[#4779aa]">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5 2a8 8 0 11-16 0 8 8 0 0116 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="divide-y divide-[#142b49]/10">
+
+                            {{-- STEP 1 --}}
+                            <div class="group flex gap-5 py-6 first:pt-5">
+                                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#62bfae]/20 bg-[#e5faf5] font-['Manrope'] text-sm font-extrabold text-[#368d80] transition duration-300 group-hover:scale-105 group-hover:bg-[#62e7d0]">
+                                    01
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-['Manrope'] text-base font-extrabold text-[#142b49] sm:text-lg">
+                                        Laporkan barang
+                                    </h4>
+                                    <p class="mt-2 text-sm leading-7 text-slate-500">
+                                        Buat laporan kehilangan atau penemuan dengan foto, deskripsi, dan informasi lokasi yang relevan.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {{-- STEP 2 --}}
+                            <div class="group flex gap-5 py-6">
+                                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#8bcfff]/30 bg-[#eaf5ff] font-['Manrope'] text-sm font-extrabold text-[#4779aa] transition duration-300 group-hover:scale-105 group-hover:bg-[#8bcfff]">
+                                    02
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-['Manrope'] text-base font-extrabold text-[#142b49] sm:text-lg">
+                                        Temukan dan ajukan klaim
+                                    </h4>
+                                    <p class="mt-2 text-sm leading-7 text-slate-500">
+                                        Periksa informasi barang dan ajukan klaim apabila kamu merasa barang tersebut adalah milikmu.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {{-- STEP 3 --}}
+                            <div class="group flex gap-5 py-6 last:pb-2">
+                                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#b8aaff]/30 bg-[#f0edff] font-['Manrope'] text-sm font-extrabold text-[#6558b0] transition duration-300 group-hover:scale-105 group-hover:bg-[#c5baff]">
+                                    03
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h4 class="font-['Manrope'] text-base font-extrabold text-[#142b49] sm:text-lg">
+                                        Konfirmasi pengembalian
+                                    </h4>
+                                    <p class="mt-2 text-sm leading-7 text-slate-500">
+                                        Setelah proses serah terima dilakukan, kedua pihak memberikan konfirmasi agar pengembalian tercatat dengan baik.
+                                    </p>
+                                </div>
                             </div>
 
                         </div>
-
-
-                        <div class="group grid grid-cols-[65px_1fr] gap-5 border-b border-[#142b47]/15 py-7 sm:grid-cols-[90px_1fr]">
-
-                            <div class="font-['Manrope'] text-4xl font-extrabold text-[#c39a51] transition-colors group-hover:text-[#142b47] sm:text-5xl">02</div>
-
-                            <div>
-                                <h3 class="font-['Manrope'] text-lg font-extrabold text-[#142b47] sm:text-xl">Temukan dan ajukan klaim</h3>
-                                <p class="mt-3 max-w-lg text-sm leading-7 text-[#6d7988]">
-                                    Periksa informasi barang dan ajukan klaim apabila kamu merasa barang tersebut adalah milikmu.
-                                </p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="group grid grid-cols-[65px_1fr] gap-5 py-7 pb-0 sm:grid-cols-[90px_1fr]">
-
-                            <div class="font-['Manrope'] text-4xl font-extrabold text-[#c39a51] transition-colors group-hover:text-[#142b47] sm:text-5xl">03</div>
-
-                            <div>
-                                <h3 class="font-['Manrope'] text-lg font-extrabold text-[#142b47] sm:text-xl">Konfirmasi pengembalian</h3>
-                                <p class="mt-3 max-w-lg text-sm leading-7 text-[#6d7988]">
-                                    Setelah proses serah terima dilakukan, kedua pihak memberikan konfirmasi agar pengembalian tercatat dengan baik.
-                                </p>
-                            </div>
-
-                        </div>
-
                     </div>
 
                 </div>
@@ -403,23 +402,23 @@
 
         {{-- CLOSING CTA --}}
         <section class="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
+            <div class="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#142b49] via-[#203e68] to-[#514d91] px-7 py-12 text-white shadow-2xl shadow-[#142b49]/10 sm:px-12 sm:py-14">
 
-            <div class="relative overflow-hidden bg-[#142b47] px-7 py-12 text-white sm:px-12 sm:py-14">
-
-                <div class="absolute -right-20 -top-32 h-80 w-80 rounded-full border border-white/10"></div>
-                <div class="absolute -right-5 -top-20 h-56 w-56 rounded-full border border-white/10"></div>
-                <div class="absolute bottom-0 left-0 h-1.5 w-36 bg-[#d5a34a]"></div>
+                <div class="pointer-events-none absolute -right-24 -top-32 h-80 w-80 rounded-full border border-white/10"></div>
+                <div class="pointer-events-none absolute -right-10 -top-20 h-56 w-56 rounded-full border border-white/10"></div>
+                <div class="pointer-events-none absolute -bottom-28 left-1/3 h-64 w-64 rounded-full bg-[#62e7d0]/10 blur-3xl"></div>
 
                 <div class="relative flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-
                     <div class="max-w-2xl">
-                        <p class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#e4bc73]">
+                        <p class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#8eeede]">
                             Make a Difference
                         </p>
 
                         <h2 class="mt-4 font-['Manrope'] text-3xl font-extrabold leading-tight tracking-[-0.05em] sm:text-4xl">
                             Satu tindakan kecil.
-                            <span class="text-[#e4bc73]">Satu cerita yang kembali.</span>
+                            <span class="bg-gradient-to-r from-[#62e7d0] via-[#8bcfff] to-[#d9d4ff] bg-clip-text text-transparent">
+                                Satu cerita yang kembali.
+                            </span>
                         </h2>
 
                         <p class="mt-4 max-w-lg text-sm leading-7 text-slate-300">
@@ -428,21 +427,34 @@
                     </div>
 
                     <a href="{{ route('user.reports.create') }}"
-                       class="group inline-flex min-h-[54px] shrink-0 items-center justify-center gap-3 bg-[#d5a34a] px-7 text-sm font-extrabold text-[#142b47] transition duration-200 hover:bg-[#edc77f]">
-
+                       class="group inline-flex min-h-[54px] shrink-0 items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#62e7d0] to-[#8bcfff] px-7 text-sm font-extrabold text-[#142b49] shadow-lg shadow-[#62e7d0]/10 transition duration-300 hover:-translate-y-1 hover:shadow-xl">
                         Mulai Buat Laporan
-
                         <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M5 12h14m-6-6 6 6-6 6"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-6-6 6 6-6 6"/>
                         </svg>
                     </a>
-
                 </div>
-
             </div>
         </section>
 
-    </div>
 
+        {{-- FOOTER --}}
+        <footer class="border-t border-[#142b49]/[0.07] bg-white">
+            <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-7 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+                <div>
+                    <p class="font-['Manrope'] text-sm font-extrabold tracking-[0.18em] text-[#142b49]">
+                        TEMU <span class="font-medium tracking-normal text-slate-400">| LOST & FOUND</span>
+                    </p>
+                    <p class="mt-1 text-xs text-slate-400">
+                        Menghubungkan barang yang hilang dengan pemiliknya.
+                    </p>
+                </div>
+
+                <p class="text-xs text-slate-400">
+                    Platform pencarian dan pengembalian barang.
+                </p>
+            </div>
+        </footer>
+
+    </div>
 </x-app-layout>

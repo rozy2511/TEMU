@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -54,6 +53,9 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/claims/{claim}', [AdminClaimController::class, 'show'])
             ->name('claims.show');
+
+        Route::delete('/claims/{claim}', [AdminClaimController::class, 'destroy'])
+            ->name('claims.destroy');
 
     });
 
